@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   let localIsDark
 
   if (typeof window !== 'undefined') {
-    if (reactLocalStorage.get('isDark') === 'false') {
+    if (localStorage.getItem('isDark') === 'false') {
       localIsDark = false
     } else {
       localIsDark = true
