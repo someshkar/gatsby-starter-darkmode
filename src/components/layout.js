@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
-import { Helmet } from 'react-helmet';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import styled, { ThemeProvider } from 'styled-components'
 
-import Header from './header';
-import SEO from './seo';
+import Header from './header'
 
-import lightTheme from '../themes/light';
-import darkTheme from '../themes/dark';
+import lightTheme from '../themes/light'
+import darkTheme from '../themes/dark'
 
-import './styles/normalize.css';
-import './styles/global.css';
+import './styles/normalize.css'
+import './styles/global.css'
 
 const Container = styled.div`
   min-height: 100vh;
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.textColor};
   transition: all 0.5s ease-out;
-`;
+`
 
 const Layout = ({ children }) => {
-  let localIsDark;
+  let localIsDark
 
-  if (localStorage.getItem('isDark') === 'false') {
-    localIsDark = false;
-  } else {
-    localIsDark = true;
+  if (typeof window !== 'undefined') {
+    if (reactLocalStorage.get('isDark') === 'false') {
+      localIsDark = false
+    } else {
+      localIsDark = true
+    }
+    console.log(localIsDark ? 'dark mode' : 'light mode')
   }
 
-  console.log(localIsDark);
-
-  const [isDark, setIsDark] = useState(localIsDark);
+  const [isDark, setIsDark] = useState(localIsDark)
 
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
@@ -39,11 +38,11 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       </Container>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+export default Layout

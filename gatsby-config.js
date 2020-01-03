@@ -4,6 +4,7 @@ module.exports = {
     description: `John's Personal Website`,
     author: `Somesh Kar @someshkar <somesh.kar@gmail.com>`,
   },
+  pathPrefix: `/gatsby-starter-darkmode`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,

@@ -1,9 +1,8 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
+import { Link } from 'gatsby'
+import React from 'react'
+import styled from 'styled-components'
 
-import Icon from './icon';
+import Icon from './icon'
 
 const links = [
   {
@@ -18,7 +17,7 @@ const links = [
     title: 'Contact',
     href: '/contact',
   },
-];
+]
 
 const Container = styled.div`
   max-width: 100vw;
@@ -32,14 +31,14 @@ const Container = styled.div`
   @media only screen and (max-width: 768px) {
     margin: 0 2rem;
   }
-`;
+`
 
 const Links = styled.ul`
   list-style-type: none;
   margin: 0;
   cursor: default;
   text-align: center;
-`;
+`
 
 const LinksItem = styled.li`
   padding: 0;
@@ -49,7 +48,7 @@ const LinksItem = styled.li`
   cursor: pointer;
   color: ${props => props.theme.colors.textColor};
   user-select: none;
-`;
+`
 
 const Header = ({ isDark, setIsDark }) => (
   <Container>
@@ -67,6 +66,6 @@ const Header = ({ isDark, setIsDark }) => (
       ))}
     </Links>
   </Container>
-);
+)
 
-export default Header;
+export default Header
